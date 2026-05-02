@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Fluid Ledger</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container" id="dashboard-page">
+        <nav class="bottom-nav">
+            <div class="fab-wrapper">
+                <button class="fab" onclick="toggleModal(true)">
+                    <i class="fa-solid fa-plus"></i>
+                </button>
+            </div>
+            <a href="index.html" class="nav-item active">
+                <i class="fa-solid fa-border-all"></i>
+                <span>Home</span>
+            </a>
+            <a href="activity.html" class="nav-item">
+                <i class="fa-solid fa-receipt"></i>
+                <span>Activity</span>
+            </a>
+            <a href="about.html" class="nav-item">
+                <i class="fa-solid fa-user"></i>
+                <span>About</span>
+            </a>
+            <a href="setting.html" class="nav-item">
+                <i class="fa-solid fa-gear"></i>
+                <span>Settings</span>
+            </a>
+        </nav>
+
+        <header>
+            <div class="logo"><i class="fa-solid fa-wallet"></i> Fluid Ledger</div>
+        </header>
+
+        <div class="balance-section">
+            <p class="balance-label">Total Balance</p>
+            <h1 class="total-balance" id="totalBalance">$0.00</h1>
+        </div>
+
+        <div class="summary-cards">
+            <div class="card card-income">
+                <div class="card-label">
+                    <i class="fa-solid fa-arrow-trend-up"></i> INCOME
+                </div>
+                <div class="card-amount" id="totalIncome">$0.00</div>
+            </div>
+            <div class="card card-expense">
+                <div class="card-label">
+                    <i class="fa-solid fa-arrow-trend-down"></i> EXPENSE
+                </div>
+                <div class="card-amount" id="totalExpense">$0.00</div>
+            </div>
+        </div>
+
+        <div class="section-padding">
+            <div class="section-header">
+                <h3>Recent Activity</h3>
+                <a href="activity.html" style="text-decoration: none; color: var(--primary-dark); font-size: 0.85rem; font-weight: 600;">See All</a>
+            </div>
+            <div class="transaction-list" id="recent-transactions">
+                </div>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="addModal">
+        <div class="modal">
+            <h2 style="margin-bottom: 20px; color: var(--text-main);">Add Transaction</h2>
+            
+            <div class="form-group">
+                <label>Item Name</label>
+                <input type="text" id="tName" placeholder="e.g. Coffee, Salary, Rent">
+            </div>
+            
+            <div class="form-group">
+                <label>Amount ($)</label>
+                <input type="number" id="tAmount" placeholder="0.00">
+            </div>
+            
+            <div class="form-group">
+                <label>Transaction Type</label>
+                <select id="tType">
+                    <option value="expense">Expense (-)</option>
+                    <option value="income">Income (+)</option>
+                </select>
+            </div>
+            
+            <div class="modal-buttons">
+                <button class="btn btn-cancel" onclick="toggleModal(false)">Cancel</button>
+                <button class="btn btn-save" onclick="saveTransaction()">Save Record</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

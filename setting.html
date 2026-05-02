@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings - Fluid Ledger</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container" id="setting-page">
+        <nav class="bottom-nav">
+            <div class="fab-wrapper" style="opacity: 0; pointer-events: none;"><button class="fab"></button></div>
+            <a href="index.html" class="nav-item">
+                <i class="fa-solid fa-border-all"></i><span>Home</span>
+            </a>
+            <a href="activity.html" class="nav-item">
+                <i class="fa-solid fa-receipt"></i><span>Activity</span>
+            </a>
+            <a href="about.html" class="nav-item">
+                <i class="fa-solid fa-user"></i><span>About</span>
+            </a>
+            <a href="setting.html" class="nav-item active">
+                <i class="fa-solid fa-gear"></i><span>Settings</span>
+            </a>
+        </nav>
+
+        <header>
+            <div class="logo"><i class="fa-solid fa-gear"></i> Settings</div>
+        </header>
+
+        <div class="section-padding">
+            <div class="content-box" style="text-align: left;">
+                <h3 style="margin-bottom: 5px; color: #d90429;">Danger Zone</h3>
+                <p style="color: var(--text-muted); font-size: 0.8rem; margin-bottom: 15px;">This will permanently delete all your transactions from this device.</p>
+                
+                <button onclick="clearAllData()" class="btn" style="background-color: #ffeaec; color: #d90429; width: 100%;">
+                    <i class="fa-solid fa-trash-can"></i> Delete All Data
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
